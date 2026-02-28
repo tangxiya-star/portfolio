@@ -1,0 +1,7 @@
+{
+  "name": "Remix: The Design Hub - NYT Portfolio",
+  "description": "A personal portfolio designed with the elegant, editorial, and playful visual language of the NYT Games hub.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

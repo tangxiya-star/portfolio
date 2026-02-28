@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holly Tang Design Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #FAF9F6;
+      font-family: 'Inter', sans-serif;
+      color: #121212;
+    }
+    .font-sans {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-serif {
+      font-family: 'DM Serif Display', serif;
+    }
+    .game-shadow {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .game-shadow-hover:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    /* Paper Texture Overlay */
+    .paper-texture {
+      filter: url(#grainy);
+    }
+
+    /* Bean Character Animations */
+    @keyframes bean-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+    }
+    
+    /* Eating Path Animation */
+    @keyframes bean-slide-eat {
+      0% { transform: translateX(-50px); }
+      100% { transform: translateX(calc(100vw + 50px)); }
+    }
+
+    @keyframes pellet-disappear {
+      0%, 45% { transform: scale(1); opacity: 1; }
+      50%, 100% { transform: scale(0); opacity: 0; }
+    }
+
+    @keyframes bean-chomp {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.9) scaleX(1.05); }
+    }
+
+    .animate-bean-float {
+      animation: bean-float 3s ease-in-out infinite;
+    }
+    
+    .animate-bean-eat {
+      animation: bean-slide-eat 6s linear infinite;
+    }
+
+    .animate-chomp {
+      animation: bean-chomp 0.3s ease-in-out infinite;
+    }
+
+    /* Ken Burns slow pan+zoom for Selected Work cards */
+    @keyframes ken-burns {
+      0%   { transform: scale(1)    translate(0%,    0%);    }
+      33%  { transform: scale(1.07) translate(-1.5%, -1%);   }
+      66%  { transform: scale(1.04) translate(1%,    0.5%);  }
+      100% { transform: scale(1)    translate(0%,    0%);    }
+    }
+    .ken-burns {
+      animation: ken-burns 14s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    /* Postcard Stamp Style */
+    .postcard-stamp {
+      mask-image: url("data:image/svg+xml,%3Csvg width='80' height='100' viewBox='0 0 80 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10C0 4.47715 4.47715 0 10 0H70C75.5228 0 80 4.47715 80 10V90C80 95.5228 75.5228 100 70 100H10C4.47715 100 0 95.5228 0 90V10Z' fill='black'/%3E%3C/svg%3E");
+      border: 2px dashed #D1D5DB;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <!-- Grain Filter for Paper Texture -->
+  <svg style="display: none;">
+    <filter id="grainy">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.3" intercept="0.4" />
+        <feFuncG type="linear" slope="0.3" intercept="0.4" />
+        <feFuncB type="linear" slope="0.3" intercept="0.4" />
+      </feComponentTransfer>
+      <feBlend mode="multiply" in2="SourceGraphic" />
+    </filter>
+  </svg>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
