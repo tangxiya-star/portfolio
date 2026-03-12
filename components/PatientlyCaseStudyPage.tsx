@@ -258,24 +258,24 @@ const decisions = [
     visual: 'Decision Visual — Flat to Categorized Topics (16:9)',
   },
   {
-    title: 'One tap in blind. I added a preview.',
-    problemShort: 'Article cards showed a title and nothing else. Users had no way to judge relevance before tapping — creating a loop of open, scan, back, repeat.',
-    problem: 'Article cards showed only a title. Users had no signal of relevance, credibility, or topic fit before committing to a tap.',
+    title: 'One tab in blind. I added a preview.',
+    problemShort: 'Article cards showed a title and nothing else. Users had no way to judge relevance before tabbing — creating a loop of open, scan, back, repeat.',
+    problem: 'Article cards showed only a title. Users had no signal of relevance, credibility, or topic fit before committing to a tab.',
     decision: '',
     subDecisions: [
       {
         label: 'B — Preview Density',
         headline: 'Expand summaries + show sources',
-        body: 'Users needed enough context to judge relevance before tapping. Reducing friction required more information per item, not less.',
+        body: 'Users needed enough context to judge relevance before tabbing. Reducing friction required more information per item, not less.',
       },
     ],
-    whyMatters: 'Relevance judgment before tapping reduces the open–scan–back loop.',
+    whyMatters: 'Relevance judgment before tabbing reduces the open–scan–back loop.',
     status: 'Shipped',
     visual: 'Decision Visual — Preview Density (16:9)',
   },
   {
     title: "We shipped 3 tabs. I'd have shipped 2.",
-    problemShort: 'A dedicated follow-up tab added visibility — but also a step. The debate was whether that extra tap was worth the clarity it bought.',
+    problemShort: 'A dedicated follow-up tab added visibility — but also a step. The debate was whether that extra tab was worth the clarity it bought.',
     problem: 'The core trade-off was clarity versus discoverability: fewer tabs simplify structure, while a dedicated follow-up tab increases action visibility.',
     decision: 'Ship three tabs in the current release and preserve an A/B path for an embedded follow-up model.',
     whyMatters: 'This reduced early-stage action friction while keeping structural simplification testable.',
@@ -1235,7 +1235,7 @@ const PatientlyCaseStudyPage: React.FC = () => {
                         </div>
 
                       </>
-                    ) : decision.title === 'One tap in blind. I added a preview.' ? (
+                    ) : decision.title === 'One tab in blind. I added a preview.' ? (
                       /* ── DECISION 02 — Preview Density ── */
                       <>
                         {/* Before/After screenshot card */}
@@ -1270,7 +1270,7 @@ const PatientlyCaseStudyPage: React.FC = () => {
                               <div className="space-y-3">
                                 {[
                                   'Title alone cannot signal relevance.',
-                                  'Relevance unresolvable before tapping.',
+                                  'Relevance unresolvable before tabbing.',
                                   'Credibility suppressed at card level.',
                                 ].map(text => (
                                   <div key={text} className="flex items-start gap-2.5">
@@ -1284,7 +1284,7 @@ const PatientlyCaseStudyPage: React.FC = () => {
                               <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-[#AAAAAA] mb-4">After</p>
                               <div className="space-y-3">
                                 {[
-                                  'Relevance judgment possible before tapping.',
+                                  'Relevance judgment possible before tabbing.',
                                   'Credibility visible at card level.',
                                   'Informed evaluation becomes the default state.',
                                 ].map(text => (
@@ -1311,14 +1311,14 @@ const PatientlyCaseStudyPage: React.FC = () => {
                           {/* My Proposal */}
                           <div>
                             <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-[#AAAAAA] mb-3">My Proposal</p>
-                            <p className="font-sans text-[28px] font-semibold text-[#111111] leading-none mb-4">2 taps.</p>
+                            <p className="font-sans text-[28px] font-semibold text-[#111111] leading-none mb-4">2 tabs.</p>
                             <p className="font-sans text-[14px] text-[#767676] leading-[1.7] max-w-[28ch]">Fewer surfaces, less friction. Users reach their goal without unnecessary confirmation steps.</p>
                           </div>
 
                           {/* Founder Concern */}
                           <div>
                             <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-[#AAAAAA] mb-3">Founder Concern</p>
-                            <p className="font-sans text-[28px] font-semibold text-[#111111] leading-none mb-4">3 taps.</p>
+                            <p className="font-sans text-[28px] font-semibold text-[#111111] leading-none mb-4">3 tabs.</p>
                             <p className="font-sans text-[14px] text-[#767676] leading-[1.7] max-w-[28ch]">Users need to see what they're committing to before they confirm — especially in a medical context.</p>
                           </div>
 
@@ -1328,14 +1328,14 @@ const PatientlyCaseStudyPage: React.FC = () => {
                         <div className="flex items-start gap-4 mb-12">
                           <span className="font-sans text-[10px] uppercase tracking-[0.18em] text-[#FFC83D] shrink-0 mt-0.5">What Shipped</span>
                           <div className="w-px h-4 bg-[#E8E8E8] shrink-0 mt-0.5" />
-                          <p className="font-sans text-[14px] text-[#444444] leading-[1.7]">3-tap version. The founder's position held — structural transparency won over speed.</p>
+                          <p className="font-sans text-[14px] text-[#444444] leading-[1.7]">3-tab version. The founder's position held — structural transparency won over speed.</p>
                         </div>
 
                         {/* Reflection — first-person, honest */}
                         <div className="border-l-2 border-[#FFC83D] pl-6 mb-14">
                           <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-[#767676] mb-3">Reflection</p>
                           <p className="font-sans text-[15px] leading-[1.75] text-[#666666] max-w-[56ch]">
-                            In hindsight, the 3-tap version improved transparency — users understood what they were confirming. But it also introduced cognitive load at the exact moment users were already processing dense medical information. The right answer was probably somewhere in between: fewer taps, more inline context.
+                            In hindsight, the 3-tab version improved transparency — users understood what they were confirming. But it also introduced cognitive load at the exact moment users were already processing dense medical information. The right answer was probably somewhere in between: fewer tabs, more inline context.
                           </p>
                         </div>
 
